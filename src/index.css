@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/*Color Pallete
+Color1: #1a1a2e;
+Color2: #16213e;
+Color3: #0f3460;
+Color4(redish): #e94560;
 
+*/
+
+body {
+  font-family: "montserrat", sans-serif !important;
+  background-color: #1a1a2e !important;
+}
+p,
+label {
+  color: #e94560;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.bg-dark {
+  background-color: #16213e !important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.8em + 0.95rem + 2px);
+  padding: 0.5rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #e9343e;
+  background-color: #0f3460;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  color: #e94560;
+  background-color: #16213e;
+  border-color: #16213e;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
