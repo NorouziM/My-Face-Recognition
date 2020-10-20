@@ -43,3 +43,24 @@ code {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
+.particles {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.navbar.sticky-top {
+  margin-top: -20px;
+  margin-right: -8px;
+}
+.btn-outline-dark {
+  color: #e94560;
+  border-color: #e94560;
+}
+.btn-outline-dark:hover {
+  color: #e94560;
+  background-color: #0f3460;
+  border-color: #1a1a2e;
+}

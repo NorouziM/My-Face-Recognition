@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import Tilt from "react-tilt";
 function Navigation() {
   return (
@@ -17,9 +17,6 @@ function Navigation() {
           </Tilt>
         </Navbar.Brand>
         <Navbar.Brand href="#">MY FACE REGONITION</Navbar.Brand>
-        <Nav className="mr-auto h5">
-          <Nav.Link href="#">Home</Nav.Link>
-        </Nav>
         <Navbar.Collapse className="justify-content-end mr-3">
           <Navbar.Text className="h5">Sign out</Navbar.Text>
         </Navbar.Collapse>

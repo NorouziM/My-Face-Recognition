@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Row } from "react-bootstrap";
+import { Form, Row, Button } from "react-bootstrap";
 
 const LinkInput = () => {
   return (
@@ -8,7 +8,16 @@ const LinkInput = () => {
         <Form>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Put Your Image URL Here</Form.Label>
-            <Form.Control type="text" placeholder="name@example.com" />
+            <div className="input-group">
+              <Form.Control
+                className="mr-1"
+                type="text"
+                placeholder="name@example.com"
+              />
+              <div className="input-group-append">
+                <Button variant="outline-dark"> Detect </Button>
+              </div>
+            </div>
           </Form.Group>
         </Form>
       </div>
