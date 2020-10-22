@@ -1,10 +1,10 @@
 import React from "react";
 import { Form, Row, Button } from "react-bootstrap";
 
-const LinkInput = () => {
+const LinkInput = ({ onInputChange, onSubmit }) => {
   return (
     <Row>
-      <div className="w-50 text-center mx-auto mt-5">
+      <div className="w-50 text-center mx-auto mt-3">
         <Form>
           <Form.Group controlId="exampleForm.ControlInput1">
             <Form.Label>Put Your Image URL Here</Form.Label>
@@ -12,10 +12,14 @@ const LinkInput = () => {
               <Form.Control
                 className="mr-1"
                 type="text"
-                placeholder="name@example.com"
+                placeholder="https://www.example.com/example.jpg"
+                onChange={onInputChange}
               />
               <div className="input-group-append">
-                <Button variant="outline-dark"> Detect </Button>
+                <Button variant="outline-dark" onClick={onSubmit}>
+                  {" "}
+                  Detect{" "}
+                </Button>
               </div>
             </div>
           </Form.Group>
