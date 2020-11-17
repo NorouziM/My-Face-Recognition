@@ -26,6 +26,12 @@ class App extends Component {
       box: {},
       age: "",
       gender: "",
+      user: {
+        id: 0,
+        name: "",
+        email: "",
+        entries: 0,
+      },
     };
   }
   calBoxLocation = (response) => {
@@ -61,6 +67,15 @@ class App extends Component {
       .catch((err) => {
         console.log(err);
       });
+
+    fetch(`http://localhost:3000/img/${this.state.user.id}`, {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+    }).then(
+      this.setState(
+        Object.assign(this.state.user, { entries: this.state.user.entries + 1 })
+      )
+    );
   };
   prediction = (response) => {
     const predictions = response.outputs[0].data.regions[0].data.concepts; // 0 to 19 is age prediction, 20 is Gender
@@ -72,6 +87,17 @@ class App extends Component {
   onSignInClick = (route) => {
     this.setState({ route: route });
   };
+  loaduser = (data) => {
+    this.setState({ imageLink: "", gender: "" });
+    this.setState({
+      user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+      },
+    });
+  };
   render() {
     return (
       <React.Fragment>
@@ -81,12 +107,21 @@ class App extends Component {
           onSignInClick={this.onSignInClick}
         />
         {this.state.route === "register" ? (
-          <RegisterForm onSignInClick={this.onSignInClick} />
+          <RegisterForm
+            onSignInClick={this.onSignInClick}
+            loaduser={this.loaduser}
+          />
         ) : this.state.route === "signOut" ? (
-          <SigninForm onSignInClick={this.onSignInClick} />
+          <SigninForm
+            onSignInClick={this.onSignInClick}
+            loaduser={this.loaduser}
+          />
         ) : (
           <React.Fragment>
-            <Rank />
+            <Rank
+              entries={this.state.user.entries}
+              name={this.state.user.name}
+            />
             <LinkInput
               onInputChange={this.onInputChange}
               onSubmit={this.onSubmit}
