@@ -1,5 +1,5 @@
 {
-  "homepage": "http://NorouziM.github.io/my-face-recognition",
+  "homepage": "https://NorouziM.github.io/my-face-recognition",
   "name": "my-face-recognition",
   "version": "0.1.0",
   "private": true,
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
