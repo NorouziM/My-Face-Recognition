@@ -68,12 +68,17 @@ class App extends Component {
         console.log(err);
       });
 
-    fetch(`http://localhost:3000/img/${this.state.user.id}`, {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-    }).then(
+    fetch(
+      `https://rocky-island-99446.herokuapp.com/img/${this.state.user.id}`,
+      {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+      }
+    ).then(
       this.setState(
-        Object.assign(this.state.user, { entries: this.state.user.entries + 1 })
+        Object.assign(this.state.user, {
+          entries: parseInt(this.state.user.entries) + 1,
+        })
       )
     );
   };

@@ -19,7 +19,7 @@ class RegisterForm extends React.Component {
     this.setState({ registerName: event.target.value });
   };
   onSubmit = () => {
-    fetch("http://localhost:3000/register", {
+    fetch("https://rocky-island-99446.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
